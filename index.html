@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Task 2</title>
+</head>
+<p>Output years of experiance :</p>
+<p id="experiance"></p>
+<hr>
+<p>Output of self rating :</p>
+<p id="self-rating"></p>
+<hr>
+<p>Output of salary :</p>
+<p id="salary"></p>
+<hr>
+<p>Output Date Fun :</p>
+<p id="date"></p>
+
+<body>
+
+    <script>
+        // 1 =>
+        let name = prompt('Inter your name : ');
+        let age = prompt('inter your age :')
+        let yearsOfExperiance = prompt('inter your years of experience :');
+        let selfRating = parseInt(prompt('Inter your self rating :'));
+
+        // 2 =>
+        if (yearsOfExperiance <= 2) {
+            console.log("Your job category is Junior");
+            alert("Your job category is Junior");
+            document.getElementById("experiance").innerText = "Your job category is Junior";
+        } else if (yearsOfExperiance > 2 && yearsOfExperiance <= 5) {
+            console.log("Your job category is Mid Level");
+            alert("Your job category is Mid Level");
+            document.getElementById("experiance").innerText = "Your job category is Mid Level";
+        } else if (yearsOfExperiance > 5 && yearsOfExperiance <= 10) {
+            console.log("Your job category is Senior");
+            alert("Your job category is Senior");
+            document.getElementById("experiance").innerText = "Your job category is Senior";
+        } else if (yearsOfExperiance > 10) {
+            console.log("Your job category is Expert");
+            alert("Your job category is Expert");
+            document.getElementById("experiance").innerText = "Your job category is Expert";
+        }
+
+        // 3 =>
+        switch (true) {
+            case selfRating >= 9:
+                console.log("Your self rating Excellent");
+                document.getElementById("self-rating").innerText = "Your self rating Excellent";
+                alert("Your self rating Excellent");
+                break;
+            case (selfRating === 7 || selfRating === 8):
+                console.log("Your self rating Good");
+                document.getElementById("self-rating").innerText = "Your self rating Good";
+                alert("Your self rating Good");
+                break;
+            case (selfRating === 5 || selfRating === 6):
+                console.log("Your self rating Average");
+                document.getElementById("self-rating").innerText = "Your self rating Average";
+                alert("Your self rating Average");
+                break;
+            case selfRating < 5:
+                console.log("Your self rating Needs Improvement");
+                document.getElementById("self-rating").innerText = "Your self rating Needs Improvement";
+                alert("Your self rating Needs Improvement");
+                break;
+        }
+
+        // 4 =>
+        let baseSalary = 10000;
+        let finalSalary = 0;
+
+        if (yearsOfExperiance >= 0 || yearsOfExperiance <= 2) {
+            let finalSalary = (baseSalary * (10 / 100)) + baseSalary;
+            console.log(`Yiur final salary ${finalSalary}`);
+            document.getElementById("salary").innerText = `Yiur final salary ${finalSalary}`;
+            alert(`Yiur final salary ${finalSalary}`);
+        } else if (yearsOfExperiance >= 3 || yearsOfExperiance <= 5) {
+            let finalSalary = (baseSalary * (15 / 100)) + baseSalary;
+            console.log(`Yiur final salary ${finalSalary}`);
+            document.getElementById("salary").innerText = `Yiur final salary ${finalSalary}`;
+        } else if (yearsOfExperiance > 5) {
+            let finalSalary = (baseSalary * (20 / 100)) + baseSalary;
+            console.log(`Yiur final salary ${finalSalary}`);
+            document.getElementById("salary").innerText = `Yiur final salary ${finalSalary}`;
+            alert(`Yiur final salary ${finalSalary}`);
+        }
+
+        // 5 =>
+
+        let date = new Date().getHours()
+
+        if (date >= 9 && date <= 18) {
+            console.log(" the employee is in day shift. ");
+            alert(" the employee is in day shift. ")
+            document.getElementById("date").innerText = " the employee is in day shift. ";
+        } else {
+            console.log("the employee is in night shift.")
+            alert("the employee is in night shift.")
+            document.getElementById("date").innerText = "the employee is in night shift.";
+        }
+
+
+
+    </script>
+</body>
+
+</html>
